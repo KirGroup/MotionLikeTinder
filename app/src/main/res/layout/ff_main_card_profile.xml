@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:motionDebug="SHOW_ALL"
+    app:layoutDescription="@xml/ff_main_card_profile_scene">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topCard"
+        android:layout_width="@dimen/margin_0dp"
+        android:layout_height="@dimen/margin_0dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_friendship_goals"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_account_photo"
+            tools:text="FRIENDSHIP GOALS" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name_friend"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/first_account_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Ekaterina Ivanova Marina" />
+
+        <ImageView
+            android:id="@+id/gradient_bottom_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="134dp"
+            app:layout_constraintBottom_toBottomOf="@+id/first_account_photo"
+            app:layout_constraintStart_toStartOf="@+id/first_account_photo" />
+
+        <ImageView
+            android:id="@+id/first_account_photo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:minHeight="480dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aa_ff_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/friendship_goals"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            tools:text="Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_friendship_goals"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
