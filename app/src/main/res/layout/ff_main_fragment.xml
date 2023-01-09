@@ -6,12 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCardsFeedSfera"
+        android:id="@+id/rcMainScreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/ff_main_card_profile" />
+        tools:listitem="@layout/ff_main_item_profile" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
