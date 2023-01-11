@@ -1,4 +1,4 @@
-package com.example.sfera.adapter
+package com.example.sfera.adapter.diff
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.sfera.data.Account
