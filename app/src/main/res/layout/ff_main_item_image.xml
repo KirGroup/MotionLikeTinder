@@ -9,5 +9,5 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/margin_16dp"
         android:paddingVertical="@dimen/margin_8dp"
-        android:src="@drawable/aa_ff_profile"/>
+        android:src="@drawable/image_profile"/>
 </FrameLayout>

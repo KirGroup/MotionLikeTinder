@@ -1,43 +1,43 @@
 package com.example.sfera.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sfera.R
-import com.example.sfera.adapter.diff.ProfileListDiffCallBack
-import com.example.sfera.adapter.holders.ImageItemViewHolder
-import com.example.sfera.adapter.holders.ProfileItemViewHolder
-import com.example.sfera.data.Account
+import com.example.sfera.adapter.holders.*
+import com.example.sfera.data.DetailAccount
+import com.example.sfera.databinding.FfMainItemImageBinding
+import com.example.sfera.databinding.FfMainItemProfileBinding
+import com.example.sfera.databinding.FfMainItemRatingBinding
+import com.example.sfera.databinding.FfMainItemTextBinding
+import com.example.sfera.databinding.FfMainItemTextLinesBinding
 
-class MainScreenAdapter: ListAdapter<Account, RecyclerView.ViewHolder>(
-    ProfileListDiffCallBack()
-) {
+class MainScreenAdapter(private val like: (Int)-> Unit, private val pass: (Int)-> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    var detailAccount: DetailAccount? = null
+        @SuppressLint("NotifyDataSetChanged")
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view: View
-        return when(viewType) {
+        return when (viewType) {
             ITEM_TYPE_PROFILE -> {
-                view = layoutInflater.inflate(R.layout.ff_main_item_profile, parent, false)
-                ProfileItemViewHolder(view)
+                ProfileItemViewHolder(FfMainItemProfileBinding.inflate(layoutInflater), like, pass)
             }
             ITEM_TYPE_IMAGE -> {
-                view = layoutInflater.inflate(R.layout.ff_main_item_image, parent, false)
-                ImageItemViewHolder(view)
+                ImageItemViewHolder(FfMainItemImageBinding.inflate(layoutInflater))
             }
             ITEM_TYPE_RATING -> {
-                view = layoutInflater.inflate(R.layout.ff_main_item_rating, parent, false)
-                ImageItemViewHolder(view)
+                RatingItemViewHolder(FfMainItemRatingBinding.inflate(layoutInflater))
             }
             ITEM_TYPE_TEXT -> {
-                view = layoutInflater.inflate(R.layout.ff_main_item_text, parent, false)
-                ImageItemViewHolder(view)
+                TextItemViewHolder(FfMainItemTextBinding.inflate(layoutInflater))
             }
             ITEM_TYPE_TEXT_LINES -> {
-                view = layoutInflater.inflate(R.layout.ff_main_item_text_lines, parent, false)
-                ImageItemViewHolder(view)
+                TextLinesItemViewHolder(FfMainItemTextLinesBinding.inflate(layoutInflater))
             }
             else -> throw IllegalArgumentException("Invalid view type")
         }
@@ -45,13 +45,16 @@ class MainScreenAdapter: ListAdapter<Account, RecyclerView.ViewHolder>(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is ProfileItemViewHolder -> holder.bind(getItem(position) as Account)
-            is ImageItemViewHolder -> holder.bind(getItem(position) as Account)
+            is ProfileItemViewHolder -> holder.bind(detailAccount!!)
+            is ImageItemViewHolder -> holder.bind(detailAccount!!)
+            is RatingItemViewHolder -> holder.bind(detailAccount!!)
+            is TextItemViewHolder -> holder.bind(detailAccount!!)
+            is TextLinesItemViewHolder -> holder.bind(detailAccount!!)
         }
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (getItem(position).id) {
+        return when (position) {
             0 -> ITEM_TYPE_PROFILE
             1 -> ITEM_TYPE_IMAGE
             2 -> ITEM_TYPE_TEXT_LINES
@@ -70,6 +73,9 @@ class MainScreenAdapter: ListAdapter<Account, RecyclerView.ViewHolder>(
         private const val ITEM_TYPE_RATING = 2
         private const val ITEM_TYPE_TEXT = 3
         private const val ITEM_TYPE_TEXT_LINES = 4
+    }
 
+    override fun getItemCount(): Int {
+        return if (detailAccount == null) 0 else 8
     }
 }

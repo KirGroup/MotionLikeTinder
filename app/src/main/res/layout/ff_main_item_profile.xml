@@ -10,7 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/margin_3dp"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/first_account_photo"
@@ -18,7 +20,7 @@
             android:layout_height="@dimen/margin_0dp"
             android:minHeight="480dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/aa_ff_profile"
+            android:src="@drawable/image_profile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +31,7 @@
             android:layout_marginBottom="@dimen/margin_24dp"
             app:layout_constraintBottom_toBottomOf="@+id/first_account_photo"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/black"
+            android:textColor="@color/teal_700"
             android:elevation="@dimen/margin_2dp"
             android:text="Ekaterina Ivanova Marina" />
 
@@ -39,7 +41,7 @@
             android:layout_height="@dimen/margin_0dp"
             android:layout_marginHorizontal="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/teal_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/first_account_photo"
@@ -51,10 +53,61 @@
             android:layout_height="@dimen/margin_0dp"
             android:layout_marginTop="@dimen/margin_20dp"
             android:layout_marginHorizontal="@dimen/margin_16dp"
-            android:textColor="@color/black"
+            android:textColor="@color/teal_700"
             android:text="Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_friendship_goals"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/bottom_first_account_photo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:minHeight="480dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bottom_name_friend"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginBottom="@dimen/margin_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_first_account_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:elevation="@dimen/margin_2dp"
+            android:text="Ekaterina Ivanova Marina" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bottom_title_friendship_goals"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_first_account_photo"
+            android:text="FRIENDSHIP GOALS" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bottom_friendship_goals"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_0dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:textColor="@color/black"
+            android:text="Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_title_friendship_goals"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
