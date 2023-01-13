@@ -9,7 +9,6 @@
         android:id="@+id/rc_cards_feed_sfera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/ff_main_item_profile" />
