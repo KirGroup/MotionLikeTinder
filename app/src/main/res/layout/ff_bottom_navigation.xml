@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/margin_1dp">
+
+    <ImageView
+        android:id="@+id/bnBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ff_bottom_navigation_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true">
+
+        <ImageButton
+            android:id="@+id/ffSkipBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ff_btn_skip_botttom_navigation" />
+
+        <ImageView
+            android:id="@+id/ffIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:src="@drawable/ff_icon_bottom_navigation"
+            android:adjustViewBounds="true" />
+
+        <ImageButton
+            android:id="@+id/ffLikeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ff_btn_like_botttom_navigation"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
