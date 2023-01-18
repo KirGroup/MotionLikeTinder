@@ -1,10 +1,11 @@
 package com.example.sfera.adapter.holders
 
+import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.constraintlayout.motion.widget.TransitionAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sfera.data.Account
+import com.example.sfera.R
 import com.example.sfera.data.DetailAccount
 import com.example.sfera.databinding.FfMainItemProfileBinding
-import com.example.sfera.databinding.FfMainItemTextBinding
 
 class ProfileItemViewHolder(
     binding: FfMainItemProfileBinding,
@@ -12,14 +13,14 @@ class ProfileItemViewHolder(
     private val pass: (Int) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    private val motionLayout = binding.root
+    private val image = binding.firstAccountPhoto
+    private val name = binding.nameFriend
+    private val goals = binding.friendshipGoals
 
-    val image = binding.firstAccountPhoto
-    val name = binding.nameFriend
-    val goals = binding.friendshipGoals
-
-    val imageBottom = binding.bottomFirstAccountPhoto
-    val nameBottom = binding.bottomNameFriend
-    val goalsBottom = binding.bottomFriendshipGoals
+    private val imageBottom = binding.bottomFirstAccountPhoto
+    private val nameBottom = binding.bottomNameFriend
+    private val goalsBottom = binding.bottomFriendshipGoals
 
     fun bind(detailAccount: DetailAccount) {
 
@@ -31,6 +32,14 @@ class ProfileItemViewHolder(
         nameBottom.text = detailAccount.name2
         goalsBottom.text = detailAccount.goals2
 
+        motionLayout.setTransitionListener(object : TransitionAdapter() {
 
+            override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
+                when (currentId) {
+                    R.id.offScreenPass -> pass.invoke(1)
+                    R.id.offScreenLike -> like.invoke(1)
+                    }
+            }
+        })
     }
 }

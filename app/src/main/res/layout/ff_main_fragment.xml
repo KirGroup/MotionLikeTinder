@@ -3,82 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content" >
 
     <include
         layout="@layout/ff_bottom_navigation"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ffBottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:elevation="@dimen/margin_1dp">
-
-        <ImageView
-            android:id="@+id/bnBackground"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/ff_bottom_navigation_background"
-            />
-
-        <ImageButton
-            android:id="@+id/ffSkipBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="77dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/ff_btn_skip_botttom_navigation"
-            app:layout_constraintStart_toStartOf="@id/bnBackground"
-            app:layout_constraintTop_toTopOf="@id/bnBackground"
-            app:layout_constraintBottom_toBottomOf="@id/bnBackground"/>
-
-        <ImageView
-            android:id="@+id/ffIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="38dp"
-            android:src="@drawable/ff_icon_bottom_navigation"
-            app:layout_constraintStart_toStartOf="@id/bnBackground"
-            app:layout_constraintTop_toTopOf="@id/bnBackground"
-            app:layout_constraintEnd_toEndOf="@id/bnBackground"
-            app:layout_constraintBottom_toBottomOf="@id/bnBackground"
-            android:adjustViewBounds="true" />
-
-        <ImageButton
-            android:id="@+id/ffLikeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="77dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/ff_btn_like_botttom_navigation"
-            app:layout_constraintEnd_toEndOf="@id/bnBackground"
-            app:layout_constraintTop_toTopOf="@id/bnBackground"
-            app:layout_constraintBottom_toBottomOf="@id/bnBackground"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcCardsFeedSfera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/ff_main_item_profile"
         />
 

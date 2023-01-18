@@ -13,37 +13,43 @@
         android:src="@drawable/ff_bottom_navigation_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/ffSkipBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bnBackground"
+        app:layout_constraintEnd_toStartOf="@id/ffIcon"
+        app:layout_constraintBottom_toBottomOf="@id/bnBackground"
+        android:layout_marginVertical="@dimen/margin_16dp"
+        android:layout_marginStart="63dp"
+        android:src="@drawable/ff_btn_like_bottom_navigation" />
 
-        <ImageButton
-            android:id="@+id/ffSkipBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:adjustViewBounds="true"
-            android:background="@drawable/ff_btn_skip_botttom_navigation" />
+    <ImageView
+        android:id="@+id/ffIcon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@+id/ffSkipBtn"
+        app:layout_constraintTop_toTopOf="@id/bnBackground"
+        app:layout_constraintBottom_toBottomOf="@id/bnBackground"
+        app:layout_constraintEnd_toStartOf="@id/ffLikeBtn"
+        android:layout_marginVertical="@dimen/margin_36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/ff_icon_bottom_navigation" />
 
-        <ImageView
-            android:id="@+id/ffIcon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:src="@drawable/ff_icon_bottom_navigation"
-            android:adjustViewBounds="true" />
+    <ImageView
+        android:id="@+id/ffLikeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@+id/ffIcon"
+        app:layout_constraintTop_toTopOf="@id/bnBackground"
+        app:layout_constraintEnd_toEndOf="@id/bnBackground"
+        app:layout_constraintBottom_toBottomOf="@id/bnBackground"
+        android:layout_marginVertical="@dimen/margin_16dp"
+        android:layout_marginEnd="63dp"
+        android:src="@drawable/ff_btn_like_bottom_navigation" />
 
-        <ImageButton
-            android:id="@+id/ffLikeBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:adjustViewBounds="true"
-            android:background="@drawable/ff_btn_like_botttom_navigation"/>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

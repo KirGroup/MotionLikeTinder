@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ConstraintSet android:id="@+id/rest">
@@ -11,6 +12,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@id/bottomCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     </ConstraintSet>
 
     <ConstraintSet
@@ -65,15 +76,46 @@
     </Transition>
 
 
+    <ConstraintSet android:id="@+id/offScreenPass">
+        <Constraint
+            android:id="@id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="-12"
+            android:layout_marginEnd="50dp"
+            android:translationY="99dp"
+            app:layout_constraintEnd_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/bottomCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/margin_1dp" />
+            </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/offScreenPass"
+        app:constraintSetStart="@+id/pass"
+        app:duration="150" />
+
+
     <ConstraintSet android:id="@+id/offScreenLike">
         <Constraint
             android:id="@id/topCard"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:rotation="15"
+            android:rotation="12"
             android:layout_marginStart="50dp"
-            android:translationY="120dp"
+            android:translationY="99dp"
             app:layout_constraintStart_toEndOf="parent" />
+
+        <Constraint
+            android:id="@id/bottomCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/margin_1dp" />
+
     </ConstraintSet>
 
     <Transition
@@ -81,6 +123,5 @@
         app:constraintSetEnd="@+id/offScreenLike"
         app:constraintSetStart="@+id/like"
         app:duration="150" />
-
 
 </MotionScene>
