@@ -1,8 +1,10 @@
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:elevation="@dimen/margin_1dp">
+    app:layoutDescription ="@xml/ff_main_bar_scene"
+    android:elevation="@dimen/margin_1dp" >
 
     <ImageView
         android:id="@+id/ff_other_collapsed"
@@ -16,7 +18,7 @@
     <ImageView
         android:id="@+id/ff_other_expanded"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,6 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/margin_16dp"
         android:src="@drawable/ff_bar_more_btn"
+        android:visibility="gone"
         />
 
     <ImageView
@@ -40,10 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18dp"
         android:src="@drawable/ff_bar_chat_btn"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/moreButton" />
+        app:layout_constraintTop_toBottomOf="@id/moreButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/changesButton"
@@ -51,10 +54,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18dp"
         android:src="@drawable/ff_bar_changes_btn"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chatButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatButton"
+        android:visibility="gone"
+        />
 
     <ImageView
         android:id="@+id/locationButton"
@@ -62,10 +66,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18dp"
         android:src="@drawable/ff_bar_location_btn"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/changesButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/changesButton"
+        android:visibility="gone"
+        />
 
     <ImageView
         android:id="@+id/reportButton"
@@ -73,10 +78,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18dp"
         android:src="@drawable/ff_bar_report_btn"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/locationButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationButton"
+        android:visibility="gone"
+        />
 
     <ImageView
         android:id="@+id/refreshButton"
@@ -84,8 +90,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_18dp"
         android:src="@drawable/ff_bar_refresh_btn"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reportButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reportButton"
+        android:visibility="gone"
+        />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>

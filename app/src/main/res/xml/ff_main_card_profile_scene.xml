@@ -57,7 +57,7 @@
         app:duration="300">
         <OnSwipe
             app:dragDirection="dragLeft"
-            app:onTouchUp="autoComplete"
+
             app:touchAnchorId="@id/topCard"
             app:touchAnchorSide="left"
             app:touchRegionId="@id/topCard" />
@@ -69,7 +69,7 @@
         app:duration="300">
         <OnSwipe
             app:dragDirection="dragRight"
-            app:onTouchUp="autoComplete"
+
             app:touchAnchorId="@+id/topCard"
             app:touchAnchorSide="right"
             app:touchRegionId="@id/topCard" />

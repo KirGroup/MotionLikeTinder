@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
 
         mainScreenAdapter = MainScreenAdapter({
             Log.i("TAG", "profile $it like")
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
             index++
+            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
         },{
             Log.i("TAG", "profile $it pass")
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
             index++
+            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
         })
 
         val mainScreenRc: RecyclerView = binding.rcCardsFeedSfera

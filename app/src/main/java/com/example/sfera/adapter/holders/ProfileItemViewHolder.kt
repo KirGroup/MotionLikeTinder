@@ -1,5 +1,6 @@
 package com.example.sfera.adapter.holders
 
+import android.util.Log
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,9 +15,9 @@ class ProfileItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private val motionLayout = binding.root
-    private val image = binding.firstAccountPhoto
-    private val name = binding.nameFriend
-    private val goals = binding.friendshipGoals
+//    private val image = binding.firstAccountPhoto
+//    private val name = binding.nameFriend
+//    private val goals = binding.friendshipGoals
 
     private val imageBottom = binding.bottomFirstAccountPhoto
     private val nameBottom = binding.bottomNameFriend
@@ -24,9 +25,9 @@ class ProfileItemViewHolder(
 
     fun bind(detailAccount: DetailAccount) {
 
-        image.setImageResource(detailAccount.imageProfile)
-        name.text = detailAccount.name
-        goals.text = detailAccount.goals
+//        image.setImageResource(detailAccount.imageProfile)
+//        name.text = detailAccount.name
+//        goals.text = detailAccount.goals
 
         imageBottom.setImageResource(detailAccount.imageProfile2)
         nameBottom.text = detailAccount.name2
@@ -35,10 +36,21 @@ class ProfileItemViewHolder(
         motionLayout.setTransitionListener(object : TransitionAdapter() {
 
             override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
+
                 when (currentId) {
-                    R.id.offScreenPass -> pass.invoke(1)
-                    R.id.offScreenLike -> like.invoke(1)
+                    R.id.offScreenPass -> {
+                        pass.invoke(detailAccount.id)
+                        motionLayout.progress = 0f
+                        motionLayout.setTransition(R.id.rest, R.id.pass)
                     }
+                    R.id.offScreenLike -> {
+                        like.invoke(detailAccount.id)
+                        motionLayout.progress = 0f
+                        motionLayout.setTransition(R.id.rest, R.id.pass)
+                    }
+                    }
+
+                Log.i("Transition", "COMPLETED")
             }
         })
     }
