@@ -1,7 +1,10 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:width="60dp"
     android:height="60dp"
+
+    app:tint="@drawable/ff_bottom_navigation_blur_filter"
     android:viewportWidth="60"
     android:viewportHeight="60">
   <path
@@ -13,7 +16,7 @@
       android:pathData="M30,30m-29.5,0a29.5,29.5 0,1 1,59 0a29.5,29.5 0,1 1,-59 0"
       android:fillColor="#00000000">
     <aapt:attr name="android:strokeColor">
-      <gradient 
+      <gradient
           android:startX="14"
           android:startY="8"
           android:endX="55"
