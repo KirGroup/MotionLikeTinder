@@ -15,9 +15,9 @@ class ProfileItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private val motionLayout = binding.root
-//    private val image = binding.firstAccountPhoto
-//    private val name = binding.nameFriend
-//    private val goals = binding.friendshipGoals
+    private val image = binding.firstAccountPhoto
+    private val name = binding.nameFriend
+    private val goals = binding.friendshipGoals
 
     private val imageBottom = binding.bottomFirstAccountPhoto
     private val nameBottom = binding.bottomNameFriend
@@ -25,9 +25,9 @@ class ProfileItemViewHolder(
 
     fun bind(detailAccount: DetailAccount) {
 
-//        image.setImageResource(detailAccount.imageProfile)
-//        name.text = detailAccount.name
-//        goals.text = detailAccount.goals
+        image.setImageResource(detailAccount.imageProfile)
+        name.text = detailAccount.name
+        goals.text = detailAccount.goals
 
         imageBottom.setImageResource(detailAccount.imageProfile2)
         nameBottom.text = detailAccount.name2
@@ -38,15 +38,15 @@ class ProfileItemViewHolder(
             override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
 
                 when (currentId) {
-                    R.id.offScreenPass -> {
+                    R.id.pass -> {
                         pass.invoke(detailAccount.id)
                         motionLayout.progress = 0f
                         motionLayout.setTransition(R.id.rest, R.id.pass)
                     }
-                    R.id.offScreenLike -> {
+                    R.id.like -> {
                         like.invoke(detailAccount.id)
                         motionLayout.progress = 0f
-                        motionLayout.setTransition(R.id.rest, R.id.pass)
+                        motionLayout.setTransition(R.id.rest, R.id.like)
                     }
                     }
 

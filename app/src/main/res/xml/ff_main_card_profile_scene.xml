@@ -32,9 +32,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:rotation="-12"
-            android:layout_marginEnd="220dp"
+            android:layout_marginEnd="50dp"
             android:translationY="99dp"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet
@@ -45,83 +45,83 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:rotation="12"
-            android:layout_marginStart="220dp"
+            android:layout_marginStart="50dp"
             android:translationY="99dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="parent" />
     </ConstraintSet>
 
 
     <Transition
-        app:constraintSetEnd="@+id/pass"
         app:constraintSetStart="@+id/rest"
+        app:constraintSetEnd="@+id/pass"
+
         app:duration="300">
         <OnSwipe
             app:dragDirection="dragLeft"
-
             app:touchAnchorId="@id/topCard"
             app:touchAnchorSide="left"
             app:touchRegionId="@id/topCard" />
     </Transition>
 
     <Transition
-        app:constraintSetEnd="@+id/like"
         app:constraintSetStart="@+id/rest"
+        app:constraintSetEnd="@+id/like"
+
         app:duration="300">
         <OnSwipe
             app:dragDirection="dragRight"
-
             app:touchAnchorId="@+id/topCard"
             app:touchAnchorSide="right"
             app:touchRegionId="@id/topCard" />
     </Transition>
 
 
-    <ConstraintSet android:id="@+id/offScreenPass">
-        <Constraint
-            android:id="@id/topCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:rotation="-12"
-            android:layout_marginEnd="50dp"
-            android:translationY="99dp"
-            app:layout_constraintEnd_toStartOf="parent" />
+<!--    <ConstraintSet android:id="@+id/offScreenPass">-->
+<!--        <Constraint-->
+<!--            android:id="@id/topCard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:rotation="-12"-->
+<!--            android:layout_marginEnd="50dp"-->
+<!--            android:translationY="99dp"-->
+<!--            app:layout_constraintEnd_toStartOf="parent" />-->
 
-        <Constraint
-            android:id="@id/bottomCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="@dimen/margin_1dp" />
-            </ConstraintSet>
+<!--        <Constraint-->
+<!--            android:id="@id/bottomCard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:elevation="@dimen/margin_1dp" />-->
+<!--            </ConstraintSet>-->
 
-    <Transition
-        app:autoTransition="animateToEnd"
-        app:constraintSetEnd="@+id/offScreenPass"
-        app:constraintSetStart="@+id/pass"
-        app:duration="150" />
+<!--    <Transition-->
+<!--        app:autoTransition="animateToEnd"-->
+<!--        app:constraintSetEnd="@+id/offScreenPass"-->
+<!--        app:constraintSetStart="@+id/pass"-->
+<!--        app:duration="150" />-->
 
 
-    <ConstraintSet android:id="@+id/offScreenLike">
-        <Constraint
-            android:id="@id/topCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:rotation="12"
-            android:layout_marginStart="50dp"
-            android:translationY="99dp"
-            app:layout_constraintStart_toEndOf="parent" />
+<!--    <ConstraintSet android:id="@+id/offScreenLike">-->
+<!--        <Constraint-->
+<!--            android:id="@id/topCard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:rotation="12"-->
+<!--            android:layout_marginStart="50dp"-->
+<!--            android:translationY="99dp"-->
+<!--            app:layout_constraintStart_toEndOf="parent" />-->
 
-        <Constraint
-            android:id="@id/bottomCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="@dimen/margin_1dp" />
+<!--        <Constraint-->
+<!--            android:id="@id/bottomCard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:elevation="@dimen/margin_1dp" />-->
 
-    </ConstraintSet>
+<!--    </ConstraintSet>-->
 
-    <Transition
-        app:autoTransition="animateToEnd"
-        app:constraintSetEnd="@+id/offScreenLike"
-        app:constraintSetStart="@+id/like"
-        app:duration="150" />
+<!--    <Transition-->
+<!--        app:autoTransition="animateToEnd"-->
+<!--        app:constraintSetEnd="@+id/offScreenLike"-->
+<!--        app:constraintSetStart="@+id/like"-->
+<!--        app:duration="150" />-->
 
 </MotionScene>
