@@ -34,23 +34,18 @@ class ProfileItemViewHolder(
         goalsBottom.text = detailAccount.goals2
 
         motionLayout.setTransitionListener(object : TransitionAdapter() {
-
             override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
-
                 when (currentId) {
                     R.id.pass -> {
                         pass.invoke(detailAccount.id)
-                        motionLayout.progress = 0f
-                        motionLayout.setTransition(R.id.rest, R.id.pass)
+//                        motionLayout.progress = 0f
+//                        motionLayout.setTransition(R.id.rest, R.id.pass)
                     }
                     R.id.like -> {
                         like.invoke(detailAccount.id)
-                        motionLayout.progress = 0f
-                        motionLayout.setTransition(R.id.rest, R.id.like)
-                    }
-                    }
 
-                Log.i("Transition", "COMPLETED")
+                    }
+                }
             }
         })
     }

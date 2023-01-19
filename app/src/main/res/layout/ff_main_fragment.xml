@@ -13,15 +13,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:elevation="@dimen/margin_1dp"
         android:background="#26FFFFFF"
-        android:weightSum="10"
+        android:weightSum="360"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/ffPassBtn"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="3"
+            android:layout_weight="143"
             android:adjustViewBounds="true"
             android:src="@drawable/ff_btn_pass_bottom_navigation"
             android:layout_marginVertical="@dimen/margin_16dp"
@@ -29,19 +29,19 @@
 
         <ImageView
             android:id="@+id/ffIcon"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="4"
+            android:layout_weight="74"
             android:src="@drawable/ff_icon_bottom_navigation"
             android:layout_marginVertical="@dimen/margin_36dp" />
 
         <ImageView
             android:id="@+id/ffLikeBtn"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="3"
+            android:layout_weight="143"
             android:adjustViewBounds="true"
             android:src="@drawable/ff_btn_like_bottom_navigation"
             android:layout_marginVertical="@dimen/margin_16dp"

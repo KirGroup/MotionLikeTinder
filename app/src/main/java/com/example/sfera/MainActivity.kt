@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
                 "They say “Friendship isn’t a big thing, it’s a million little things” and I agree. To me it means that friendship isn't always about one big gesture of help. Instead, true friendship is about millions", "Russian, English","Belarus, Minsk", "Woman, men, groupe of people", "My name is Anna, I’m 28 years old. I was born and currently live in Irkutsk. I’m living with my long-term boyfriend and our cat Fluffy. I’m the head of marketing department in a local web development company. Me and my boyfriend love traveling around Russia, we’ve been to 20 cities so far. I’m an open and outgoing person, and my friends say I’m a good conversationalist. "),
         Account(2, R.drawable.image3, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, "Ivanova Olga", "Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live longer. Friendship is usually based on common interests and mutual understanding, true encouragement and sympathy.\n" +
                 "They say “Friendship isn’t a big thing, it’s a million little things” and I agree. To me it means that friendship isn't always about one big gesture of help. Instead, true friendship is about millions", "Russian, English","Belarus, Minsk", "Woman, men, groupe of people", "My name is Anna, I’m 28 years old. I was born and currently live in Irkutsk. I’m living with my long-term boyfriend and our cat Fluffy. I’m the head of marketing department in a local web development company. Me and my boyfriend love traveling around Russia, we’ve been to 20 cities so far. I’m an open and outgoing person, and my friends say I’m a good conversationalist. "),
-        Account(3, R.drawable.image3, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, "Ivanova Olga", "Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live longer. Friendship is usually based on common interests and mutual understanding, true encouragement and sympathy.\n" +
+        Account(3, R.drawable.image4, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, "Ivanova Olga", "Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live longer. Friendship is usually based on common interests and mutual understanding, true encouragement and sympathy.\n" +
         "They say “Friendship isn’t a big thing, it’s a million little things” and I agree. To me it means that friendship isn't always about one big gesture of help. Instead, true friendship is about millions", "Russian, English","Belarus, Minsk", "Woman, men, groupe of people", "My name is Anna, I’m 28 years old. I was born and currently live in Irkutsk. I’m living with my long-term boyfriend and our cat Fluffy. I’m the head of marketing department in a local web development company. Me and my boyfriend love traveling around Russia, we’ve been to 20 cities so far. I’m an open and outgoing person, and my friends say I’m a good conversationalist. "),
-        Account(4, R.drawable.image3, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, "Ivanova Olga", "Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live longer. Friendship is usually based on common interests and mutual understanding, true encouragement and sympathy.\n" +
+        Account(4, R.drawable.image5, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, "Ivanova Olga", "Friendship is a special relationship between people. People need this relationship because they expect help and comfort from each other. Those who have friends have less stress and live longer. Friendship is usually based on common interests and mutual understanding, true encouragement and sympathy.\n" +
                 "They say “Friendship isn’t a big thing, it’s a million little things” and I agree. To me it means that friendship isn't always about one big gesture of help. Instead, true friendship is about millions", "Russian, English","Belarus, Minsk", "Woman, men, groupe of people", "My name is Anna, I’m 28 years old. I was born and currently live in Irkutsk. I’m living with my long-term boyfriend and our cat Fluffy. I’m the head of marketing department in a local web development company. Me and my boyfriend love traveling around Russia, we’ve been to 20 cities so far. I’m an open and outgoing person, and my friends say I’m a good conversationalist. "))
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mainScreenAdapter = MainScreenAdapter({
-            Log.i("TAG", "profile $it like")
+            Log.i("TAGMotion", "profile $it like")
             index++
             mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
         },{
-            Log.i("TAG", "profile $it pass")
+            Log.i("TAGMotion", "profile $it pass")
             index++
             mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
         })
@@ -45,5 +45,24 @@ class MainActivity : AppCompatActivity() {
         mainScreenRc.adapter = mainScreenAdapter
 
         mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
+
+        onClickBottomNavigation()
+    }
+
+    private fun onClickBottomNavigation(){
+
+        val btnPass = binding.ffPassBtn
+        val btnLike = binding.ffLikeBtn
+
+        btnPass.setOnClickListener {
+            index++
+            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
+        }
+
+        btnLike.setOnClickListener {
+            index++
+            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
+        }
+
     }
 }
