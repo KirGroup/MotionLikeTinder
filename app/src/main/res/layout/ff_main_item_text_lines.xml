@@ -1,50 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:adjustViewBounds="true"
     android:background="#212426">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Languages"
+        android:layout_height="match_parent"
+        android:text="About"
+        android:adjustViewBounds="true"
         android:textSize="@dimen/margin_16dp"
         android:textColor="#99FFFFFF"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Russian, English"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:text="My name is Anna"
         android:textSize="@dimen/margin_10dp"
         android:textColor="#DEFFFFFF"/>
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Location"
-        android:textSize="@dimen/margin_16dp"
-        android:textColor="#99FFFFFF"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Belarus, Minsk"
-        android:textSize="@dimen/margin_10dp"
-        android:textColor="#DEFFFFFF"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Looking for"
-        android:textSize="@dimen/margin_16dp"
-        android:textColor="#99FFFFFF"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Woman, men, groupe of people"
-        android:textSize="@dimen/margin_10dp"
-        android:textColor="#DEFFFFFF"/>
-</LinearLayout>
+</FrameLayout>
