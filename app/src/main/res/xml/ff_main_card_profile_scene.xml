@@ -66,8 +66,7 @@
         app:constraintSetEnd="@+id/pass"
         app:duration="1">
         <OnSwipe
-            app:dragDirection="dragClockwise"
-            app:touchAnchorSide="left"/>
+            app:dragDirection="dragLeft"/>
     </Transition>
 
     <Transition
@@ -75,8 +74,7 @@
         app:constraintSetEnd="@+id/like"
         app:duration="1">
         <OnSwipe
-            app:dragDirection="dragRight"
-            app:touchAnchorSide="right" />
+            app:dragDirection="dragRight"/>
     </Transition>
 
     <Transition
