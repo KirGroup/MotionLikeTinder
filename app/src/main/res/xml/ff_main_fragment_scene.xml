@@ -23,7 +23,7 @@
             android:id="@id/rcCardsFeedSfera"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-
+            android:rotation="-12"
             android:layout_marginEnd="50dp"
             android:translationY="99dp"
             app:layout_constraintEnd_toStartOf="parent" />
@@ -36,7 +36,7 @@
             android:id="@id/rcCardsFeedSfera"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-
+            android:rotation="12"
             android:layout_marginStart="50dp"
             android:translationY="99dp"
             app:layout_constraintStart_toEndOf="parent" />
@@ -49,7 +49,10 @@
         app:duration="1">
         <OnSwipe
             app:dragDirection="dragLeft"
-            app:touchAnchorSide="left" />
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/rcCardsFeedSfera"
+            app:touchAnchorSide="left"
+            app:touchRegionId="@id/rcCardsFeedSfera" />
     </Transition>
 
     <Transition
@@ -58,7 +61,21 @@
         app:duration="1">
         <OnSwipe
             app:dragDirection="dragRight"
-            app:touchAnchorSide="right" />
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@+id/rcCardsFeedSfera"
+            app:touchAnchorSide="right"
+            app:touchRegionId="@id/rcCardsFeedSfera" />
     </Transition>
 
+    <Transition
+        app:constraintSetStart="@id/pass"
+        app:constraintSetEnd="@id/rest"
+        app:autoTransition="jumpToEnd"
+        app:duration="0"/>
+
+    <Transition
+        app:constraintSetStart="@id/like"
+        app:constraintSetEnd="@id/rest"
+        app:autoTransition="jumpToEnd"
+        app:duration="0"/>
 </MotionScene>

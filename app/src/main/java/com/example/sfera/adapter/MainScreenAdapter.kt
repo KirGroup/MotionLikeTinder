@@ -12,7 +12,7 @@ import com.example.sfera.databinding.FfMainItemRatingBinding
 import com.example.sfera.databinding.FfMainItemTextBinding
 import com.example.sfera.databinding.FfMainItemTextLinesBinding
 
-class MainScreenAdapter(private val like: (Int)-> Unit, private val pass: (Int)-> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainScreenAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var detailAccount: DetailAccount? = null
         @SuppressLint("NotifyDataSetChanged")
@@ -25,7 +25,7 @@ class MainScreenAdapter(private val like: (Int)-> Unit, private val pass: (Int)-
         val layoutInflater = LayoutInflater.from(parent.context)
         return when (viewType) {
             ITEM_TYPE_PROFILE -> {
-                ProfileItemViewHolder(FfMainItemProfileBinding.inflate(layoutInflater), like, pass)
+                ProfileItemViewHolder(FfMainItemProfileBinding.inflate(layoutInflater))
             }
             ITEM_TYPE_IMAGE -> {
                 ImageItemViewHolder(FfMainItemImageBinding.inflate(layoutInflater))

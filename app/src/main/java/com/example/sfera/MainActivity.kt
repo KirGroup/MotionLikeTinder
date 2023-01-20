@@ -31,15 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding = FfMainFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mainScreenAdapter = MainScreenAdapter({
-            Log.i("TAGMotion", "profile $it like")
-            index++
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
-        },{
-            Log.i("TAGMotion", "profile $it pass")
-            index++
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
-        })
+        mainScreenAdapter = MainScreenAdapter()
 
         val mainScreenRc: RecyclerView = binding.rcCardsFeedSfera
         mainScreenRc.adapter = mainScreenAdapter
@@ -51,18 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClickBottomNavigation(){
 
-        val btnPass = binding.ffPassBtn
-        val btnLike = binding.ffLikeBtn
 
-        btnPass.setOnClickListener {
-            index++
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
-        }
-
-        btnLike.setOnClickListener {
-            index++
-            mainScreenAdapter.detailAccount = DetailAccount(items[index], items[index + 1])
-        }
 
     }
 }
