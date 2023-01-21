@@ -55,16 +55,7 @@
     <Transition
         app:constraintSetStart="@+id/rest"
         app:constraintSetEnd="@+id/pass"
-        app:duration="1">
-        <OnSwipe
-            app:dragDirection="dragLeft"
-            app:touchAnchorSide="left"/>
-    </Transition>
-
-    <Transition
-        app:constraintSetStart="@+id/rest"
-        app:constraintSetEnd="@+id/pass"
-        app:duration="1">
+        app:duration="0">
         <OnSwipe
             app:dragDirection="dragLeft"/>
     </Transition>
@@ -72,7 +63,7 @@
     <Transition
         app:constraintSetStart="@+id/rest"
         app:constraintSetEnd="@+id/like"
-        app:duration="1">
+        app:duration="0">
         <OnSwipe
             app:dragDirection="dragRight"/>
     </Transition>
